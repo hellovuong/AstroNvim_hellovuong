@@ -1,5 +1,3 @@
-# AstroNvim User Configuration Example
-
 <h1 align="center">AstroNvim User Configuration</h1>
 
 <div align="center">
