@@ -6,6 +6,11 @@
 <img src="https://img.shields.io/github/license/hellovuong/AstroNvim_hellovuong?style=for-the-badge&logo=powerpages&color=cba6f7&logoColor=D9E0EE&labelColor=302D41"/>
 </div>
 
+
+## 🌟 Preview
+
+![Preview1](https://raw.githubusercontent.com/hellovuong/AstroNvim_hellovuong/main/.github/preview.png)
+
 ## 🛠️ Installation
 
 #### Make a backup of your current nvim and shared folder
