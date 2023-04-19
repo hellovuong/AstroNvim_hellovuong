@@ -12,5 +12,10 @@ return {
      {
        "EdenEast/nightfox.nvim",
        lazy = false,
+     },
+     {
+       "tpope/vim-fugitive",
+       lazy = true,
+       event = "BufRead",
      }
 }
