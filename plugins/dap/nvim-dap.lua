@@ -9,7 +9,7 @@ return function()
     cppdbg = {
       id = "cppdbg",
       type = "executable",
-      command = "/home/vuong/.vscode/extensions/ms-vscode.cpptools-1.15.1-linux-x64/debugAdapters/bin/OpenDebugAD7",
+      command = "/home/vuong/.vscode/extensions/ms-vscode.cpptools-1.14.5-linux-x64/debugAdapters/bin/OpenDebugAD7",
     },
   }
   dap.configurations = {
@@ -26,7 +26,7 @@ return function()
     },
     cpp = {
       {
-        name = "Launch (choose debug file manually)",
+        name = "Default (choose debug file manually)",
         type = "cppdbg",
         request = "launch",
         program = function()
@@ -60,6 +60,13 @@ return function()
       },
     },
   }
+  
+-- Dap load launch.json when available
+    local cwd = vim.fn.expand("%:p:h")
+    if vim.fn.filereadable(cwd .. "/.vscode/launch.json") or vim.fn.filereadable(cwd .. "./launch.json") then
+        require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
+    end
+
   -- get notify
   local function start_session(_, _)
     local info_string = string.format("%s", dap.session().config.program)
