@@ -17,5 +17,10 @@ return {
        "tpope/vim-fugitive",
        lazy = true,
        event = "BufRead",
+     },
+     {
+       "tpope/vim-surround",
+       lazy = true,
+       event = "BufRead",
      }
 }
