@@ -22,5 +22,22 @@ return {
        "tpope/vim-surround",
        lazy = true,
        event = "BufRead",
-     }
+     },
+     {
+       "github/copilot.vim",
+       lazy = true,
+       event = "BufRead",
+     },
+      {
+        "kkoomen/vim-doge",
+        run = ":call doge#install()",
+        lazy = true,
+        event = "BufRead"
+      },
+      {
+        "p00f/clangd_extensions.nvim",
+        lazy = true,
+        event = "BufRead"
+
+      }
 }
