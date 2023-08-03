@@ -9,35 +9,38 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-     {
-       "EdenEast/nightfox.nvim",
-       lazy = false,
-     },
-     {
-       "tpope/vim-fugitive",
-       lazy = true,
-       event = "BufRead",
-     },
-     {
-       "tpope/vim-surround",
-       lazy = true,
-       event = "BufRead",
-     },
-     {
-       "github/copilot.vim",
-       lazy = true,
-       event = "BufRead",
-     },
-      {
-        "kkoomen/vim-doge",
-        run = ":call doge#install()",
-        lazy = true,
-        event = "BufRead"
-      },
-      {
-        "p00f/clangd_extensions.nvim",
-        lazy = true,
-        event = "BufRead"
-
-      }
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = true,
+    event = "BufRead",
+  },
+  {
+    "tpope/vim-surround",
+    lazy = true,
+    event = "BufRead",
+  },
+  {
+    "kkoomen/vim-doge",
+    run = ":call doge#install()",
+    lazy = true,
+    event = "BufRead"
+  },
+  -- {
+  --   "p00f/clangd_extensions.nvim",
+  --   lazy = true,
+  --   event = "BufRead"
+  -- },
+   {
+    "alpertuna/vim-header",
+    lazy = true,
+    event = "BufRead"
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    event = "BufRead"
+  },
 }

@@ -1,13 +1,13 @@
-require("clangd_extensions.config").setup {}
-require("clangd_extensions.ast").init()
-vim.cmd [[
-  command ClangdToggleInlayHints lua require('clangd_extensions.inlay_hints').toggle_inlay_hints()
-  command -range ClangdAST lua require('clangd_extensions.ast').display_ast(<line1>, <line2>)
-  command ClangdTypeHierarchy lua require('clangd_extensions.type_hierarchy').show_hierarchy()
-  command ClangdSymbolInfo lua require('clangd_extensions.symbol_info').show_symbol_info()
-  command -nargs=? -complete=customlist,s:memuse_compl ClangdMemoryUsage lua require('clangd_extensions.memory_usage').show_memory_usage('<args>' == 'expand_preamble')
-  ]]
-
+-- require("clangd_extensions.config").setup {}
+-- require("clangd_extensions.ast").init()
+-- vim.cmd [[
+--   command ClangdToggleInlayHints lua require('clangd_extensions.inlay_hints').toggle_inlay_hints()
+--   command -range ClangdAST lua require('clangd_extensions.ast').display_ast(<line1>, <line2>)
+--   command ClangdTypeHierarchy lua require('clangd_extensions.type_hierarchy').show_hierarchy()
+--   command ClangdSymbolInfo lua require('clangd_extensions.symbol_info').show_symbol_info()
+--   command -nargs=? -complete=customlist,s:memuse_compl ClangdMemoryUsage lua require('clangd_extensions.memory_usage').show_memory_usage('<args>' == 'expand_preamble')
+--   ]]
+--
 return {
   cmd = {
     -- see clangd --help-hidden
@@ -20,6 +20,7 @@ return {
     "--completion-style=bundled",
     "--cross-file-rename",
     "--header-insertion=iwyu",
+    "--inlay-hints=true",
   },
   capabilities = { offsetEncoding = "utf-8" },
   -- handlers = handler.with({ handler.hover, clangd_ext_handler }),
@@ -30,5 +31,5 @@ return {
     completeUnimported = true,
     semanticHighlighting = true,
   },
-  clangdInlayHintsProvider = true,
+  -- clangdInlayHintsProvider = true,
 }

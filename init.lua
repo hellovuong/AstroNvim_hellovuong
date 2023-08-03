@@ -53,6 +53,10 @@ return {
     servers = {
       -- "pyright"
     },
+    inlay_hints = { 
+      enabled = true 
+    },
+
   },
 
   -- Configure require("lazy").setup() options
@@ -83,4 +87,5 @@ return {
     --   },
     -- }
   end,
+  vim.api.nvim_set_keymap('n', '<F4>', ':AddHeader<CR>', {noremap = true, silent = true}),
 }
