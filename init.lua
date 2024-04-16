@@ -69,7 +69,15 @@ return {
       },
     },
   },
-
+  plugins = {
+    {
+      "L3MON4D3/LuaSnip",
+      config = function(plugin, opts)
+        require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+        require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } } -- load snippets paths
+      end,
+    },
+  },
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
@@ -88,4 +96,5 @@ return {
     -- }
   end,
   vim.api.nvim_set_keymap('n', '<F4>', ':AddHeader<CR>', {noremap = true, silent = true}),
+  vim.api.nvim_set_option("clipboard","unnamed")
 }
