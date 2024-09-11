@@ -46,31 +46,4 @@ return {
     lazy = true,
     event = "BufRead"
   },
-  {
-    "hat0uma/prelive.nvim",
-    opts = {},
-    lazy = true,
-    event = "BufRead",
-    cmd = {
-      "PreLiveGo",
-      "PreLiveStatus",
-      "PreLiveClose",
-      "PreLiveCloseAll",
-      "PreLiveLog",
-    }
-  },
-  {
-    "hat0uma/doxygen-previewer.nvim",
-    lazy = true,
-    event = "BufRead",
-    opts = {},
-    dependencies = { "hat0uma/prelive.nvim" },
-    cmd = {
-      "DoxygenOpen",
-      "DoxygenUpdate",
-      "DoxygenStop",
-      "DoxygenLog",
-      "DoxygenTempDoxyfileOpen"
-    },
-  }
 }
